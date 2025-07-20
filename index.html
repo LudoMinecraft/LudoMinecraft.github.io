@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ludo - Développeur Java & Minecraft</title>
+    <!-- Liaison vers la feuille de style CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Polices depuis Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="main-container">
+        <!-- Node 1: Accueil -->
+        <section id="home" class="flow-node hero-node">
+            <h1>Ludo</h1>
+            <p>Développeur Java & Créateur d'expériences Minecraft</p>
+        </section>
+
+        <!-- Node 2: Mind Map / Compétences -->
+        <section id="mindmap-container" class="flow-node">
+            <h2>Mon Parcours & Compétences</h2>
+            <div class="mindmap-section">
+                <svg id="mindmap-svg"></svg>
+                <div class="hub-node">
+                    <img src="./images/pdp.jpg" alt="Logo Ludo">
+                    <span>Mon Parcours</span>
+                </div>
+                <!-- Les compétences seront injectées ici par JavaScript -->
+            </div>
+        </section>
+        
+        <!-- Nouvelle section Parcours avec thème Minecraft -->
+        <section id="journey" class="flow-node journey-node">
+            <h2>Mon Parcours</h2>
+            <div class="minecraft-ui">
+                <!-- Barre d'XP Minecraft officielle -->
+                <div class="xp-bar-container">
+                    <div class="minecraft-xp-bar">
+                        <div class="xp-level-display">Level 17</div>
+                        <div class="minecraft-xp-fill" id="xp-progress"></div>
+                        <div class="xp-particles">
+                            <div class="xp-orb"></div>
+                            <div class="xp-orb"></div>
+                            <div class="xp-orb"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Parcours simplifié -->
+                <div class="short-journey">
+                    <div class="journey-milestone">
+                        <div class="milestone-icon">🎮</div>
+                        <div class="milestone-title">Découverte</div>
+                        <div class="milestone-year">2016</div>
+                    </div>
+                    
+                    <div class="journey-milestone">
+                        <div class="milestone-icon">⚙️</div>
+                        <div class="milestone-title">Command Blocks</div>
+                        <div class="milestone-year">2017</div>
+                    </div>
+                    
+                    <div class="journey-milestone">
+                        <div class="milestone-icon">🔧</div>
+                        <div class="milestone-title">MCreator</div>
+                        <div class="milestone-year">2019</div>
+                    </div>
+                    
+                    <div class="journey-milestone">
+                        <div class="milestone-icon">💎</div>
+                        <div class="milestone-title">Expert Java</div>
+                        <div class="milestone-year">2025</div>
+                    </div>
+                </div>
+                
+                <!-- Éléments flottants pour motion design -->
+                <div class="floating-elements">
+                    <div class="floating-cube"></div>
+                    <div class="floating-cube"></div>
+                    <div class="floating-cube"></div>
+                    <div class="floating-cube"></div>
+                </div>
+                
+                <!-- Bouton de transition vers projets -->
+                <div class="journey-to-projects">
+                    <button id="goToProjects" class="journey-cta-btn">
+                        <span>Découvrir Mes Projets</span>
+                        <div class="btn-particles"></div>
+                    </button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Connecteur animé entre les sections -->
+        <svg class="connector-svg" id="main-connector" viewBox="0 0 300 200" preserveAspectRatio="none">
+             <path d="M 150,0 C 150,100 150,100 150,200"/>
+        </svg>
+
+        <!-- Node 3: Projets -->
+        <section id="projects" class="flow-node projects-node">
+            <h2>Mes Créations</h2>
+            <div id="projects-grid" class="projects-grid"></div>
+        </section>
+
+        <!-- Section Parcours Détaillé - Déplacée après les projets -->
+        <section id="detailed-journey" class="flow-node detailed-journey-node">
+            <h2>Mon Parcours Détaillé</h2>
+            <div class="detailed-timeline">
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-icon">🎮</div>
+                    <div class="timeline-content">
+                        <h3>Découverte sur Epicube</h3>
+                        <span class="timeline-date">2016</span>
+                        <p>Ma passion pour le développement a pris racine au cœur même de l'expérience Minecraft, en explorant les mondes et les mécaniques de grands serveurs comme Epicube. C'est là que j'ai compris que les seules limites du jeu étaient celles de l'imagination.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-icon">⚙️</div>
+                    <div class="timeline-content">
+                        <h3>Premiers pas avec didileo</h3>
+                        <span class="timeline-date">2017</span>
+                        <p>Inspiré, j'ai fait mes premiers pas en tant que créateur aux côtés de didileo, en construisant des cartes complexes basées sur les command blocks. C'était une première approche de la logique et de l'automatisation qui a éveillé ma curiosité pour aller plus loin.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-icon">🔧</div>
+                    <div class="timeline-content">
+                        <h3>Apprentissage avec MCreator</h3>
+                        <span class="timeline-date">2019</span>
+                        <p>Cette curiosité m'a naturellement guidé vers des outils comme MCreator, puis vers l'apprentissage du développement Java en suivant les tutoriels de créateurs passionnés comme Gravenilvec.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-icon">💎</div>
+                    <div class="timeline-content">
+                        <h3>Développeur Autodidacte</h3>
+                        <span class="timeline-date">2020-2025</span>
+                        <p>Aujourd'hui, c'est en autodidacte que je continue d'évoluer. Je passe des heures à lire la documentation, à décortiquer les forums de Spigot et Bukkit, et à expérimenter pour transformer des idées complexes en plugins stables, performants et qui repoussent les limites du jeu. Chaque projet est une nouvelle aventure.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Node 4: Contact -->
+        <section id="contact" class="flow-node contact-node">
+            <h2>Contact</h2>
+            <p style="text-align:center;">Une idée ? Un projet ? Parlons-en.</p>
+            <div class="contact-buttons">
+                <button id="discord-username-btn" class="contact-btn">Discord: tiktok</button>
+                <a href="https://discord.gg/aqtUSaCXGc" target="_blank" class="contact-btn">Rejoindre le Serveur</a>
+            </div>
+            <img src="./images/skin.png" alt="Skin Minecraft Ludo" class="contact-skin-img">
+        </section>
+    </div>
+
+    <!-- Fenêtre Modale pour les détails du projet -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h3 id="modal-title"></h3>
+            <div class="modal-video-container">
+                <iframe id="modal-video" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <h4>Description</h4>
+            <p id="modal-description"></p>
+            <h4>Technologies utilisées</h4>
+            <div id="modal-tech" class="skill-pills"></div>
+            <div id="modal-links" class="modal-links"></div>
+        </div>
+    </div>
+
+    <!-- Liaison vers le fichier JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
