@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
             technologies: ["Java 21", "Spigot API", "Minecraft 1.17"],
             youtubeId: "vD4UxduMOYI",
             githubLink: null,
-            archiveLink: null
+            archiveLink: "https://mega.nz/file/KMJTVRpT#JiajPcs0EByY6sEoFyg4tOe6rA-v3tbyktdtenIA4cY"
         },
         {
             title: "Minecraft but everything I Touch turns to Lava",
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
             technologies: ["Java", "Spigot API"],
             youtubeId: "FSw7U6tdxAQ", 
             githubLink: "",
-            archiveLink: null
+            archiveLink: "https://mega.nz/file/WRYkgbba#lunWq52OXehaPmES8I9KbwpvayAmRsMMx-AJ0fHokS0"
         },
         {
             title: "Minecraft but there's Only One Block",
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
             technologies: ["Java", "Spigot API", "World Generation"],
             youtubeId: "FnqZoJNkpEQ",
             githubLink: null,
-            archiveLink: ""
+            archiveLink: "https://mega.nz/file/rEhkiDCJ#jR0hMIVEImUOqtPhq11L78C5UB6_zTuLP8aY1aMSoI8"
         }
     ];
 
