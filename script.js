@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const projectsData = [
     {
       title: 'Minecraft but My XP = World Size',
+      type: 'Plugin Spigot · YouTube',
       thumbnail: 'https://i.ytimg.com/vi/vD4UxduMOYI/maxresdefault.jpg',
       description: "La world border grandit à chaque XP. Gestion fine des events et de la WorldBorder.",
       technologies: ['Java 21', 'Spigot API', 'Minecraft 1.17'],
@@ -13,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     {
       title: 'Minecraft but everything I Touch turns to Lava',
+      type: 'Plugin Spigot · YouTube',
       thumbnail: 'https://i.ytimg.com/vi/FSw7U6tdxAQ/maxresdefault.jpg',
       description: "Tout ce que je touche devient de la lave. Gestion des interactions et des blocs.",
       technologies: ['Java 21', 'Spigot API', 'Minecraft 1.17'],
@@ -23,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     {
       title: "Minecraft but there's Only One Block",
+      type: 'Plugin Spigot · YouTube',
       thumbnail: 'https://i.ytimg.com/vi/FnqZoJNkpEQ/maxresdefault.jpg',
       description: "One Block infini avec phases et loot évolutifs.",
       technologies: ['Java 21', 'Spigot API', 'Minecraft 1.17'],
@@ -33,6 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     {
       title: 'Plugin Feu — pour Exra',
+      type: 'Plugin Paper · Commandé',
       thumbnail: 'https://yt3.googleusercontent.com/NsFp25yC6O0VzcgfduMOkAci_wEIcPs4HnSaUiURj67alol4PenQ-FUS9M9GO6yNcDsJVuOFQQ=s800-c-k-c0x00ffffff-no-rj',
       description: "Plugin créé pour le YouTubeur Exra : le joueur est constamment en feu, sauf dans l'eau et dans les chaudrons remplis d'eau. Simple mais efficace — la vidéo n'est jamais sortie.",
       technologies: ['Java 21', 'Paper API', 'Minecraft 1.20'],
@@ -43,6 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     {
       title: 'HeadLifes SMP',
+      type: 'Plugin Paper · SMP',
       thumbnail: 'https://cdn.discordapp.com/icons/1377340027612168212/9d0d47c2936d295f37b454d18ad2d9ac.png?size=256',
       description: "SMP custom : les joueurs droppent leur tête à la mort. À la Forge, poser 5 têtes permet de fabriquer une arme cheat. Des NPCs permettent d'obtenir de la bière.",
       technologies: ['Java 21', 'Paper API', 'Minecraft 1.20'],
@@ -53,6 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     {
       title: 'Réputation SMP',
+      type: 'Plugin Paper · SMP',
       thumbnail: 'https://cdn.discordapp.com/icons/1514952705695809586/64c0872a0859bfe46f17e1b079b95917.png?size=256',
       description: "SMP avec système de réputation : points gagnés via succès, kills de joueurs et de boss. /shop pour acheter des effets de potion. Crafts custom disponibles avec ces mêmes points.",
       technologies: ['Java 25', 'Paper API', 'Minecraft 1.21'],
@@ -115,7 +121,10 @@ document.addEventListener('DOMContentLoaded', () => {
       card.innerHTML = `
         <div class="project-file-bar"><span class="term-dot"></span><span>${p.technologies[0].toLowerCase().replace(/\s+/g, '-')}.replay</span></div>
         <img src="${p.thumbnail}" alt="Miniature ${p.title}" class="project-thumbnail" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/600x400/13151a/e7e9ec?text=Image'">
-        <h3 class="project-title">${p.title}</h3>
+        <div class="project-info">
+          <h3 class="project-title">${p.title}</h3>
+          <p class="project-type">${p.type}</p>
+        </div>
       `;
       grid.appendChild(card);
     });
@@ -204,46 +213,17 @@ document.addEventListener('DOMContentLoaded', () => {
     els('.flow-node').forEach((node) => observer.observe(node));
   }
 
-  // Journey build bar
-  function setupJourney() {
-    const fill = document.getElementById('xp-progress');
-    const percentLabel = document.getElementById('xp-percent');
-    if (!fill) return;
-    const target = clamp(Number(fill.dataset.target) || 70, 0, 100);
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          fill.style.width = `${target}%`;
-          if (percentLabel) percentLabel.textContent = `Level 18 · ${target}%`;
-          observer.disconnect();
-        }
-      });
-    }, { threshold: 0.5 });
-    observer.observe(fill.closest('.build-progress'));
-  }
-
   // Contact
   function setupContact() {
     const btn = document.getElementById('discord-username-btn');
     if (!btn) return;
     btn.addEventListener('click', async () => {
       try {
-        await navigator.clipboard.writeText('tiktok');
+        await navigator.clipboard.writeText('@tiktoks');
         showToast('Pseudo Discord copié');
       } catch {
         showToast('Impossible de copier');
       }
-    });
-  }
-
-  // Smooth scroll to projects
-  function setupScrollToProjects() {
-    const btn = document.getElementById('goToProjects');
-    const section = document.getElementById('projects');
-    if (!btn || !section) return;
-    btn.addEventListener('click', () => {
-      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   }
 
@@ -271,8 +251,6 @@ document.addEventListener('DOMContentLoaded', () => {
   setupProjects();
   setupModal();
   setupAnimations();
-  setupJourney();
   setupContact();
-  setupScrollToProjects();
   setupMobileNav();
 });
