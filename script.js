@@ -71,8 +71,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const skills = [
     { name: 'Java', tag: 'langage', desc: 'Langage principal, écosystème JVM', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg' },
-    { name: 'Spigot API', tag: 'api serveur', desc: 'Plugins pour serveurs Minecraft', logo: './images/spigot.png' },
-    { name: 'Minestom', tag: 'api serveur', desc: 'Serveurs Minecraft sur mesure', logo: './images/minestom.png' },
+    { name: 'Spigot API', tag: 'api serveur', desc: 'Plugins pour serveurs Minecraft', logo: './images/spigot.webp' },
+    { name: 'Minestom', tag: 'api serveur', desc: 'Serveurs Minecraft sur mesure', logo: './images/minestom.webp' },
     { name: 'Fabric', tag: 'modding', desc: 'Mods Minecraft légers et rapides', logo: 'https://fabricmc.net/assets/logo.png' },
     { name: 'Git', tag: 'versioning', desc: 'Suivi de version & collaboration', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg' },
     { name: 'Maven', tag: 'build', desc: 'Build & gestion des dépendances', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/maven/maven-original.svg' },
@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
     grid.innerHTML = skills.map((s) => `
       <div class="stack-card">
         <div class="stack-card-head">
-          <img src="${s.logo}" alt="${s.name}" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/32x32/13151a/e7e9ec?text=%20'">
+          <img src="${s.logo}" alt="${s.name}" width="32" height="32" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/32x32/13151a/e7e9ec?text=%20'">
           <div class="stack-card-text">
             <span class="stack-name">${s.name}</span>
             <span class="stack-tag">${s.tag}</span>
@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
       card.dataset.index = String(i);
       card.innerHTML = `
         <div class="project-file-bar"><span class="term-dot"></span><span>${p.technologies[0].toLowerCase().replace(/\s+/g, '-')}.replay</span></div>
-        <img src="${p.thumbnail}" alt="Miniature ${p.title}" class="project-thumbnail" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/600x400/13151a/e7e9ec?text=Image'">
+        <img src="${p.thumbnail}" alt="Miniature ${p.title}" class="project-thumbnail" width="640" height="360" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/600x400/13151a/e7e9ec?text=Image'">
         <div class="project-info">
           <h3 class="project-title">${p.title}</h3>
           <p class="project-type">${p.type}</p>

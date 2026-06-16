@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+    <link rel="preload" href="./images/pdp.webp" as="image">
 </head>
 <body>
 
@@ -46,7 +48,7 @@
                 <div class="terminal-body">
                     <p class="cmd-line"><span class="prompt">➜</span> whoami</p>
                     <div class="whoami-output">
-                        <img src="./images/pdp.jpg" alt="Photo de profil de Ludo" class="avatar">
+                        <img src="./images/pdp.webp" alt="Photo de profil de Ludo" class="avatar" width="64" height="64">
                         <div>
                             <h1 class="hero-name">Ludo<span class="blink-cursor">_</span></h1>
                             <p class="hero-role">// Développeur Java — créateur d'expériences Minecraft</p>
@@ -138,7 +140,7 @@
                     </p>
                 </div>
             </div>
-            <img src="./images/skin.png" alt="Skin Minecraft de Ludo" class="contact-skin-img" id="contact-skin">
+            <img src="./images/skin.webp" alt="Skin Minecraft de Ludo" class="contact-skin-img" id="contact-skin" width="110" loading="lazy">
         </section>
     </main>
 
@@ -164,6 +166,6 @@
 
     <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
