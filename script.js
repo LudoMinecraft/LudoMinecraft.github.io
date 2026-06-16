@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       title: 'Minecraft but My XP = World Size',
       type: 'Plugin Spigot · YouTube',
-      thumbnail: '\'https://i.ytimg.com/vi_webp/vD4UxduMOYI/maxresdefault.webp',
+      thumbnail: 'https://i.ytimg.com/vi_webp/vD4UxduMOYI/maxresdefault.webp',
       description: "La world border grandit à chaque XP. Gestion fine des events et de la WorldBorder.",
       technologies: ['Java 21', 'Spigot API', 'Minecraft 1.17'],
       youtubeId: 'vD4UxduMOYI',
