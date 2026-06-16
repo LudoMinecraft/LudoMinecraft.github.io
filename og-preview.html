@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200">
+<title>OG Preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    width: 1200px;
+    height: 630px;
+    overflow: hidden;
+    background: #0a0b0d;
+    font-family: 'Hanken Grotesk', sans-serif;
+    color: #e7e9ec;
+    position: relative;
+  }
+
+  /* grain dots */
+  body::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0);
+    background-size: 26px 26px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* amber glow top */
+  .glow {
+    position: absolute;
+    top: -120px; left: 50%; transform: translateX(-50%);
+    width: 900px; height: 500px;
+    background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(242,184,75,0.22), transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* corner marks */
+  .corner { position: absolute; width: 18px; height: 18px; z-index: 2; }
+  .corner::before, .corner::after { content: ''; position: absolute; background: rgba(255,255,255,0.25); }
+  .corner::before { width: 18px; height: 1px; top: 8px; left: 0; }
+  .corner::after  { width: 1px; height: 18px; left: 8px; top: 0; }
+  .tl { top: 20px; left: 20px; }
+  .tr { top: 20px; right: 20px; transform: scaleX(-1); }
+  .bl { bottom: 20px; left: 20px; transform: scaleY(-1); }
+  .br { bottom: 20px; right: 20px; transform: scale(-1); }
+
+  /* layout */
+  .card {
+    position: relative;
+    z-index: 1;
+    width: 100%; height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 80px;
+    gap: 80px;
+  }
+
+  /* left */
+  .left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: #f2b84b;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .tag::before {
+    content: '';
+    display: inline-block;
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: #5fd99c;
+    box-shadow: 0 0 8px rgba(95,217,156,0.6);
+  }
+
+  .name {
+    font-size: 72px;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.03em;
+  }
+  .name span { color: #f2b84b; }
+
+  .role {
+    font-size: 22px;
+    color: #9aa0aa;
+    font-weight: 500;
+    line-height: 1.4;
+  }
+
+  .pills {
+    display: flex;
+    gap: 10px;
+    margin-top: 4px;
+    flex-wrap: wrap;
+  }
+  .pill {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.12);
+    color: #9aa0aa;
+    background: rgba(255,255,255,0.04);
+  }
+  .pill.accent { border-color: rgba(242,184,75,0.4); color: #f2b84b; background: rgba(242,184,75,0.08); }
+
+  /* right */
+  .right {
+    width: 340px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .stat-card {
+    background: #13151a;
+    border: 1px solid rgba(255,255,255,0.10);
+    border-radius: 12px;
+    padding: 18px 22px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .stat-card.highlight { border-color: rgba(242,184,75,0.3); background: rgba(242,184,75,0.06); }
+
+  .stat-num {
+    font-size: 36px;
+    font-weight: 800;
+    color: #f2b84b;
+    line-height: 1;
+    font-family: 'JetBrains Mono', monospace;
+    flex-shrink: 0;
+  }
+  .stat-label {
+    font-size: 14px;
+    color: #9aa0aa;
+    line-height: 1.4;
+  }
+  .stat-label strong { color: #e7e9ec; display: block; font-size: 15px; }
+
+  .cta-row {
+    margin-top: 4px;
+    background: #f2b84b;
+    border-radius: 10px;
+    padding: 16px 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .cta-row span {
+    font-weight: 800;
+    font-size: 16px;
+    color: #1a1305;
+  }
+  .cta-arrow {
+    font-size: 22px;
+    color: #1a1305;
+  }
+
+  /* domain badge */
+  .domain {
+    position: absolute;
+    bottom: 24px;
+    right: 30px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: #5d6168;
+    z-index: 2;
+  }
+</style>
+</head>
+<body>
+  <div class="glow"></div>
+  <div class="corner tl"></div>
+  <div class="corner tr"></div>
+  <div class="corner bl"></div>
+  <div class="corner br"></div>
+
+  <div class="card">
+    <div class="left">
+      <div class="tag">Disponible pour de nouveaux projets</div>
+      <h1 class="name">Ludo<span>_</span></h1>
+      <p class="role">Développeur Java<br>spécialisé Minecraft</p>
+      <div class="pills">
+        <span class="pill accent">Spigot API</span>
+        <span class="pill accent">Paper API</span>
+        <span class="pill">Minestom</span>
+        <span class="pill">Fabric</span>
+        <span class="pill">Java 21</span>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="stat-card highlight">
+        <div class="stat-num">6</div>
+        <div class="stat-label">
+          <strong>Projets réalisés</strong>
+          plugins, SMPs, expériences custom
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">10</div>
+        <div class="stat-label">
+          <strong>Ans de Minecraft</strong>
+          depuis Epicube jusqu'au Java pur
+        </div>
+      </div>
+      <div class="cta-row">
+        <span>Voir le portfolio →</span>
+        <span class="cta-arrow">ludo.city</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="domain">ludo.city</div>
+</body>
+</html>
