@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       title: 'Minecraft but My XP = World Size',
       type: 'Plugin Spigot · YouTube',
-      thumbnail: 'https://i.ytimg.com/vi/vD4UxduMOYI/maxresdefault.jpg',
+      thumbnail: '\'https://i.ytimg.com/vi_webp/vD4UxduMOYI/maxresdefault.webp',
       description: "La world border grandit à chaque XP. Gestion fine des events et de la WorldBorder.",
       technologies: ['Java 21', 'Spigot API', 'Minecraft 1.17'],
       youtubeId: 'vD4UxduMOYI',
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       title: 'Minecraft but everything I Touch turns to Lava',
       type: 'Plugin Spigot · YouTube',
-      thumbnail: 'https://i.ytimg.com/vi/FSw7U6tdxAQ/maxresdefault.jpg',
+      thumbnail: 'https://i.ytimg.com/vi_webp/FSw7U6tdxAQ/maxresdefault.webp',
       description: "Tout ce que je touche devient de la lave. Gestion des interactions et des blocs.",
       technologies: ['Java 21', 'Spigot API', 'Minecraft 1.17'],
       youtubeId: 'FSw7U6tdxAQ',
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       title: "Minecraft but there's Only One Block",
       type: 'Plugin Spigot · YouTube',
-      thumbnail: 'https://i.ytimg.com/vi/FnqZoJNkpEQ/maxresdefault.jpg',
+      thumbnail: 'https://i.ytimg.com/vi_webp/FnqZoJNkpEQ/maxresdefault.webp',
       description: "One Block infini avec phases et loot évolutifs.",
       technologies: ['Java 21', 'Spigot API', 'Minecraft 1.17'],
       youtubeId: 'FnqZoJNkpEQ',
@@ -81,7 +81,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Utilities
   const els = (sel) => Array.from(document.querySelectorAll(sel));
-  const clamp = (v, min, max) => Math.min(Math.max(v, min), max);
 
   function showToast(msg) {
     const t = document.getElementById('toast');
